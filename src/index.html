@@ -18,8 +18,10 @@
     <ul id="messages">
     </ul>
     <script>
-        // Change Ip address based on your current wifi ip address
-        var ws = new WebSocket("ws://your_IP_Address:8000/ws");
+        // Change the IP address based on your current wifi ip address
+        var ipAddress = "your_IP_Address";
+        // Use the variable in the WebSocket URL
+        var ws = new WebSocket("ws://" + ipAddress + ":8000/ws"); // Create a new WebSocket
         ws.onopen = function (event) {
             console.log("WebSocket state:", ws.readyState);  // This will log "OPEN"
         };
